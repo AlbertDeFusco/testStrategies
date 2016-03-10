@@ -1,0 +1,24 @@
+package:
+  name: strategy
+  version: "0.1"
+
+source:
+  path: ./
+
+build:
+  script: python setup.py install
+  entry_points:
+    - strategies = strategy.__main__:main
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - pandas
+    - pandas-datareader
+    - matplotlib
+    - numpy
+
+
