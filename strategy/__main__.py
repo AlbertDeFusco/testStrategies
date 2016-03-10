@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-import strategy
+from strategy.movingaverage import MovingAverageCrossStrategy
+from strategy.backtest import MarketOnClosePortfolio
+import pandas as pd
+from pandas_datareader import data
 
 if __name__ == '__main__':
     apple = data.DataReader('AAPL', 'yahoo', '1990')

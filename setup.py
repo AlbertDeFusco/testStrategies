@@ -7,10 +7,6 @@ setup( name='strategy',
         license='MIT',
         packages=['strategy'],
 
-        package_data= {
-            'strategy.tests' : ['data/*']
-            },
-
         entry_points = {
             'scripts':'strategies = strategy.__main__:main'
             }

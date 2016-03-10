@@ -1,0 +1,2 @@
+from strategy.movingaverage import MovingAverageCrossStrategy
+from strategy.backtest import MarketOnClosePortfolio
