@@ -12,8 +12,8 @@ class MovingAverageCrossStrategy(object):
         self.signals = pd.DataFrame(index = self.bars.index)
         self.signals['signal'] = 0
 
-        self.signals['short_mavg'] = pd.rolling_mean(self.bars['Close'], window=self.short_window, min_periods=1)
-        self.signals['long_mavg'] = pd.rolling_mean(self.bars['Close'], window=self.long_window, min_periods=1)
+        self.signals['short_mavg'] = self.bars['Close'].rolling(window=self.short_window, min_periods=1).mean()
+        self.signals['long_mavg'] = self.bars['Close'].rolling(window=self.long_window, min_periods=1).mean()
 
         def cross(x):
             short = x['short_mavg']

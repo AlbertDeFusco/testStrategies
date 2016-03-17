@@ -4,7 +4,7 @@ from strategy.backtest import MarketOnClosePortfolio
 import pandas as pd
 from pandas_datareader import data
 
-if __name__ == '__main__':
+def main():
     apple = data.DataReader('AAPL', 'yahoo', '1990')
 
     averages = [(10,50), (30,100), (50, 200), (100, 400)]
@@ -24,3 +24,6 @@ if __name__ == '__main__':
         port = MarketOnClosePortfolio(company[0], company[1], capital, mav, n_shares)
         port.backtest_portfolio()
         print('%6d %6d %8.2f' % (short,long,port.score()))
+
+if __name__ == '__main__':
+    main()
